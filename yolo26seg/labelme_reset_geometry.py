@@ -120,7 +120,6 @@ def main():
         str(args.source.resolve()),
         "--labels", str(args.classes.resolve()),
         "--output", str(args.output.resolve()),
-        "--nodata",
     ]
     print("[INFO] 执行:", " ".join(cmd))
     subprocess.run(cmd, check=False)

@@ -139,7 +139,6 @@ def main():
         str(args.source.resolve()),
         "--labels", str(labels_path),
         "--output", str(args.output.resolve()),
-        "--nodata",
     ]
     print("[INFO] 执行:", " ".join(cmd))
     print("[INFO] 在 labelme 中用多边形（Polygon）勾选轮廓，保存后会在输出目录生成同名 .json")

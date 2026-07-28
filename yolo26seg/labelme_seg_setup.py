@@ -67,7 +67,7 @@ def launch_labelme_ui(images_dir: Path, labels_file: Path, output_dir: Path):
         str(images_dir),
         "--labels", str(labels_file),
         "--output", str(output_dir),
-        "--nodata",  # 不把图片 base64 写入 json，节省空间
+        # labelme>=7 已移除 --nodata；默认不写 imageData
     ]
     print("[INFO] 执行:", " ".join(cmd))
     print("[INFO] 在 labelme 中：用多边形（Polygon）勾选轮廓，保存后会在当前目录生成同名 .json")

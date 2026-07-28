@@ -103,9 +103,9 @@ def write_class_id_map(dataset_root: Path, class_names: list[str]) -> Path:
 
 
 def launch_labelme(images_dir: Path, labels_file: Path, *, use_flags: bool = False) -> int:
+    # labelme>=5/7: --nodata 已移除；默认不写 imageData，需要时再加 --with-image-data
     cmd = _resolve_labelme_cmd() + [
         str(images_dir),
-        "--nodata",
         "--output",
         str(images_dir),
     ]
@@ -118,7 +118,7 @@ def launch_labelme(images_dir: Path, labels_file: Path, *, use_flags: bool = Fal
     print("[INFO] 标注提示：")
     print("       1) Create Polygons 勾选部件轮廓（旋转视角也请贴合外形）")
     print("       2) 类别必须从列表选择，勿手打别名")
-    print("       3) 保存后生成与图片同名的 .json（--nodata，不含 imageData）")
+    print("       3) 保存后生成与图片同名的 .json（默认不含 imageData）")
     print("       4) lock point 标红贴/锁点区域；handle 标整段黑色手柄")
     try:
         completed = subprocess.run(cmd, check=False)
