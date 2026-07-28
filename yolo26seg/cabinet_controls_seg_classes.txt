@@ -1,0 +1,15 @@
+# Cabinet YOLO26-seg labelme classes (order = class_id 0..N-1).
+# Strings match YOLOE prompts / ROS2 published class_name so
+# coordinate_projector_node substring rules keep working:
+#   - "handle" / "cabinet door" -> handle grasp path
+#   - "lock point" -> lock force/contact path
+#   - push button / rotary / toggle -> cabinet control path
+
+red push button
+green push button
+black rotary selector switch
+yellow toggle switch
+red toggle switch
+white toggle switch
+black cabinet door handle
+lock point
